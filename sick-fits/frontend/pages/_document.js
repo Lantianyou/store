@@ -22,7 +22,7 @@ export default class MyDocument extends Document {
           </>
         )
       }
-    } finally {
+    } finally { 
       sheet.complete()
     }
   }
