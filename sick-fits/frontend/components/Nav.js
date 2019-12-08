@@ -1,14 +1,36 @@
+import Router from 'next/router'
 import Link from 'next/link'
+import NProgress from 'nprogress'
+import NavStyles from './styles/NavStyles'
+
+Router.onRouteChangeStart = () => {
+  NProgress.start()
+}
+Router.onRouteChangeComplete = () => {
+  NProgress.done()
+}
+Router.onRouteChangeError = () => {
+  NProgress.done()
+}
 
 const Nav = () => (
-  <div>
+  <NavStyles>
+    <Link href="/items">
+      <a>Items</a>
+    </Link>
     <Link href="/sell">
-      <a>sell</a>
+      <a>Sell</a>
     </Link>
-    <Link href="/">
-      <a>home</a>
+    <Link href="/signup">
+      <a>Sign up</a>
     </Link>
-  </div>
+    <Link href="/orders">
+      <a>Orders </a>
+    </Link>
+    <Link href="/me">
+      <a>Me</a>
+    </Link>
+  </NavStyles>
 )
 
 export default Nav
