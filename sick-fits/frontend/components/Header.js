@@ -1,11 +1,13 @@
-const Header = () => (
-    <div>
-        <div className="bar">
-            <a href=""></a>
-        </div>
-        <div className="sub-bar">
+import Nav from './Nav'
 
-        </div>
-        <div>Cart</div>
+const Header = () => (
+  <div>
+    <div className="bar">
+      <Nav />
     </div>
+    <div className="sub-bar"></div>
+    <div>Cart</div>
+  </div>
 )
+
+export default Header
