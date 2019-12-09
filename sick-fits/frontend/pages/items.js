@@ -1,19 +1,8 @@
 import React, { Component } from 'react'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
-
-const ALL_ITEMS_QUERY = gql`
-  query ALL_ITEMS_QUERY {
-    items {
-      id
-      title
-      price
-      description
-      image
-      largeImage
-    }
-  }
-`
+import styled from 'styled-components'
+import Item from '../components/Item'
 
 class Items extends Component {
   render() {
@@ -28,7 +17,13 @@ class Items extends Component {
             if (error) {
               return <p>Error: {error.message}</p>
             }
-            return <p>child of query</p>
+            return (
+              <ItemsList>
+                {data.items.map(item => (
+                  <p>{item.title}</p>
+                ))}
+              </ItemsList>
+            )
           }}
         </Query>
       </div>
