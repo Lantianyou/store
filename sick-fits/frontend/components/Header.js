@@ -1,6 +1,6 @@
-import Link from 'next/link'
-import Nav from './Nav'
-import styled from 'styled-components'
+import Link from 'next/link';
+import styled from 'styled-components';
+import Nav from './Nav';
 
 const Logo = styled.h1`
   font-size: 4rem;
@@ -20,7 +20,7 @@ const Logo = styled.h1`
     margin: 0;
     text-align: center;
   }
-`
+`;
 
 const StyledHeader = styled.header`
   .bar {
@@ -39,10 +39,10 @@ const StyledHeader = styled.header`
     grid-template-columns: 1fr auto;
     border-bottom: 10px solid ${props => props.theme.lightGrey};
   }
-`
+`;
 
 const Header = () => (
-  <div>
+  <StyledHeader>
     <div className="bar">
       <Logo>
         <Link href="/">
@@ -51,9 +51,9 @@ const Header = () => (
       </Logo>
       <Nav />
     </div>
-    <div className="sub-bar"></div>
+    <div className="sub-bar">Search</div>
     <div>Cart</div>
-  </div>
-)
+  </StyledHeader>
+);
 
-export default Header
+export default Header;

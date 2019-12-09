@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { Query } from 'react-apollo'
-import gql from 'graphql-tag'
-import styled from 'styled-components'
-import Item from './Item'
+import React, { Component } from 'react';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
+import styled from 'styled-components';
+import Item from './Item';
 
 const ALL_ITEMS_QUERY = gql`
   query ALL_ITEMS_QUERY {
@@ -15,11 +15,11 @@ const ALL_ITEMS_QUERY = gql`
       largeImage
     }
   }
-`
+`;
 
 const Center = styled.div`
   text-align: center;
-`
+`;
 
 const ItemsList = styled.div`
   display: grid;
@@ -27,20 +27,20 @@ const ItemsList = styled.div`
   grid-gap: 60px;
   max-width: ${props => props.theme.maxWidth};
   margin: 0 auto;
-`
+`;
 
 class Items extends Component {
   render() {
     return (
-      <div>
+      <Center>
         <p>items</p>
         <Query query={ALL_ITEMS_QUERY}>
           {({ data, error, loading }) => {
             if (loading) {
-              return <p>Loading...</p>
+              return <p>Loading...</p>;
             }
             if (error) {
-              return <p>Error: {error.message}</p>
+              return <p>Error: {error.message}</p>;
             }
             return (
               <ItemsList>
@@ -48,12 +48,12 @@ class Items extends Component {
                   <Item item={item} key={item.id} />
                 ))}
               </ItemsList>
-            )
+            );
           }}
         </Query>
-      </div>
-    )
+      </Center>
+    );
   }
 }
 
-export default Items
+export default Items;
