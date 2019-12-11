@@ -1,11 +1,11 @@
+const cookieParser = require('cookie-parser')
+
 require('dotenv').config({ path: 'variables.env' })
 const createServer = require('./createServer')
 const db = require('./db')
 
 const server = createServer()
-
-// express middleware to handle cookie
-
+server.express.use(cookieParser())
 server.start(
   {
     cors: {
@@ -13,7 +13,7 @@ server.start(
       origin: process.env.FRONTEND_URL
     }
   },
-  deets => {
+  (deets) => {
     console.log(`server is on ${deets.port}`)
   }
 )
