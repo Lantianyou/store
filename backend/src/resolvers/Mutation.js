@@ -64,7 +64,7 @@ const Mutations = {
     return user
   },
   signout(parent, args, ctx, info) {
-    ctx.respons.clearCookie('token')
+    ctx.response.clearCookie('token')
   }
 }
 

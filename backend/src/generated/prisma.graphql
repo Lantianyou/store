@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/dtlantianyou-eef4bc/store/dev
-# timestamp: Wed Dec 11 2019 12:19:50 GMT+0800 (China Standard Time)
+# timestamp: Wed Dec 11 2019 16:20:52 GMT+0800 (China Standard Time)
 
 type AggregateItem {
   count: Int!
@@ -808,4 +808,5 @@ input UserWhereInput {
 
 input UserWhereUniqueInput {
   id: ID
+  email: String
 }
