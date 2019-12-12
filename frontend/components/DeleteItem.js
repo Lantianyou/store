@@ -11,7 +11,7 @@ const DELETE_ITEM_MUTATION = gql`
   }
 `
 
-export default class DeleteItem extends Component {
+class DeleteItem extends Component {
   update = (cache, payload) => {
     const data = cache.readQuery({ query: ALL_ITEMS_QUERY })
     data.items = data.items.filter(
@@ -26,15 +26,21 @@ export default class DeleteItem extends Component {
         variables={{ id: this.props.id }}
         update={this.update}
       >
-        {(deleteItem, { error }) => {
-          if (confirm('are you sure to delete the item?')) {
-            deleteItem()
-          }
-        }}
-        <button>{this.props.children}</button>
+        {(deleteItem, { error }) => (
+          <button
+            onClick={() => {
+              if (confirm('are you sure to delete the item?')) {
+                deleteItem()
+              }
+            }}
+          >
+            {this.props.children}
+          </button>
+        )}
       </Mutation>
     )
   }
 }
+export default DeleteItem
 
 export { DELETE_ITEM_MUTATION }
