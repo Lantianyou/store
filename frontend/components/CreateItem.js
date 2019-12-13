@@ -30,7 +30,7 @@ class CreateItem extends Component {
   state = {
     title: 'cool shoes',
     description: 'description is below',
-    image: 'dog.png',
+    image: '',
     largeImage: '',
     price: 0
   }
@@ -79,7 +79,7 @@ class CreateItem extends Component {
             <Error error={error} />
             <fieldset disabled={loading} aria-busy={loading}>
               <label htmlFor="file">
-                Title
+                Photo
                 <input
                   type="file"
                   id="file"

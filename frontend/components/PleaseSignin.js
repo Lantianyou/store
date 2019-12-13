@@ -1,10 +1,10 @@
-import { QUERY } from 'react-apollo'
+import { Query } from 'react-apollo'
 import { CURRENT_USER_QUERY } from './User'
 import Signin from './Signin'
 
 const PleaseSignIn = (props) => (
   <Query query={CURRENT_USER_QUERY}>
-    {({ data, loading } ) => {
+    {({ data, loading }) => {
       if (loading) {
         return <p>loading...</p>
       }
