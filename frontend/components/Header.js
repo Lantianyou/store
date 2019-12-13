@@ -1,6 +1,7 @@
-import Link from 'next/link';
-import styled from 'styled-components';
-import Nav from './Nav';
+import Link from 'next/link'
+import styled from 'styled-components'
+import Nav from './Nav'
+import Cart from './Cart'
 
 const Logo = styled.h1`
   font-size: 4rem;
@@ -10,7 +11,7 @@ const Logo = styled.h1`
   transform: skew(-7deg);
   a {
     padding: 0.5rem 1rem;
-    background: ${props => props.theme.red};
+    background: ${(props) => props.theme.red};
     color: white;
     text-transform: uppercase;
     text-decoration: none;
@@ -20,11 +21,11 @@ const Logo = styled.h1`
     margin: 0;
     text-align: center;
   }
-`;
+`
 
 const StyledHeader = styled.header`
   .bar {
-    border-bottom: 10px solid ${props => props.theme.black};
+    border-bottom: 10px solid ${(props) => props.theme.black};
     display: grid;
     grid-template-columns: space-between;
     align-items: stretch;
@@ -37,9 +38,9 @@ const StyledHeader = styled.header`
   .sub-bar {
     display: grid;
     grid-template-columns: 1fr auto;
-    border-bottom: 10px solid ${props => props.theme.lightGrey};
+    border-bottom: 10px solid ${(props) => props.theme.lightGrey};
   }
-`;
+`
 
 const Header = () => (
   <StyledHeader>
@@ -52,8 +53,8 @@ const Header = () => (
       <Nav />
     </div>
     <div className="sub-bar">Search</div>
-    <div>Cart</div>
+    <Cart />
   </StyledHeader>
-);
+)
 
-export default Header;
+export default Header

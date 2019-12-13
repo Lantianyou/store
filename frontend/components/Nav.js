@@ -1,6 +1,8 @@
 import Router from 'next/router'
 import Link from 'next/link'
 import NProgress from 'nprogress'
+import { Mutation } from 'react-apollo'
+import { TOGGLE_CART_MUTATION } from './Cart'
 import Signout from './Signout'
 import User from './User'
 import NavStyles from './styles/NavStyles'
@@ -34,6 +36,9 @@ const Nav = () => (
               <a>Me</a>
             </Link>
             <Signout />
+            <Mutation mutation={TOGGLE_CART_MUTATION}>
+              {(toggleCart) => <button onClick={toggleCart}>cart</button>}
+            </Mutation>
           </>
         )}
         {!me && (
