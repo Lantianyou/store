@@ -17,11 +17,11 @@ const Query = {
     )
   },
   async users(parent, args, ctx, info) {
-    if (!ctx.request) {
+    if (!ctx.request.userId) {
       console.log(ctx.request.user.id)
       throw new Error('user is not logged in')
     }
-    hasPermission(ctx.request.user, ['USER', 'ADMIN', 'PERMISSIONUPDATE'])
+    hasPermission(ctx.request.user, ['ADMIN', 'PERMISSIONUPDATE'])
     return ctx.db.query.users({}, info)
   }
 }
