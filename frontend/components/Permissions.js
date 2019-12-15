@@ -41,7 +41,7 @@ const Permissions = (props) => (
       console.log(data) || (
         <div>
           <Error error={error} />
-          <div className="">
+          <div>
             <h2>permissions</h2>
             <Table>
               <thead>
@@ -118,7 +118,7 @@ class UserPermissions extends Component {
                       type="checkbox"
                       checked={this.state.permissions.includes(permission)}
                       value={permission}
-                      onChange={this.handlePermissionChange}
+                      // onChange={this.handlePermissionChange}
                     />
                   </label>
                 </td>
@@ -141,3 +141,4 @@ class UserPermissions extends Component {
 }
 
 export default Permissions
+export { UPDATE_PERMISSIONS_MUTATION, ALL_USERS_QUERY }

@@ -26,7 +26,7 @@ const Cart = () => (
           <CartStyles open={data.cartOpen}>
             <header>
               <CloseButton title="close" onClick={toggleCart}>
-                time
+                close
               </CloseButton>
               <Supreme>Your Cart</Supreme>
               <p>You have __ items in your cart. </p>

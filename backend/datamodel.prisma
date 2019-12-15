@@ -7,6 +7,13 @@ enum Permission {
   PERMISSIONUPDATE
 }
 
+type CartItem {
+  id: ID! @id
+  quantity: Int! @default(value:1)
+  item:Item!
+  user:User!
+}
+
 type User {
   id: ID! @id
   name: String!
@@ -28,9 +35,4 @@ type Item {
   user: User!
 }
 
-type CartItem {
-  id: ID! @id
-  quantity: Int! @default(value:1)
-  item:Item!
-  user:User!
-}
+

@@ -71,7 +71,7 @@ class CreateItem extends Component {
               const res = await createItem()
               console.log(res)
               Router.push({
-                pathname: '/items',
+                pathname: '/item',
                 query: { id: res.data.createItem.id }
               })
             }}

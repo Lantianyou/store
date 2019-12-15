@@ -146,7 +146,7 @@ const Mutations = {
       },
       info
     )
-    hasPermission(currentUser, ['ADMIN', 'PERMISSIONUPDATE'])
+    hasPermission(currentUser, ['USER', 'ADMIN', 'PERMISSIONUPDATE'])
     return ctx.db.mutation.updateUser(
       {
         data: {

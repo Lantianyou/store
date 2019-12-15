@@ -41,6 +41,11 @@ class Items extends Component {
           variables={{
             skip: this.props.page * perPage - perPage
           }}
+          refetchQueries={[
+            {
+              query: ALL_ITEMS_QUERY
+            }
+          ]}
         >
           {({ data, error, loading }) => {
             if (loading) {
