@@ -40,7 +40,6 @@ class CreateItem extends Component {
     this.setState({ [name]: e.target.value })
   }
   uploadFile = async (e) => {
-    console.log('uploading...')
     const files = e.target.files
     const data = new FormData()
     data.append('file', files[0])

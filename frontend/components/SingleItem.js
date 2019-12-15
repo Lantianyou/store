@@ -48,10 +48,12 @@ class SingleItem extends Component {
           if (!data.item) {
             return <p>no item found for {this.props.id}</p>
           }
-          const item = { data }
+          const { item } = data
           return (
             <SingleItemStyles>
-              <Head>store |{item.title}</Head>
+              <Head>
+                <title>Sick Fits | {item.title}</title>
+              </Head>
               <img src={item.largeImage} alt={item.title} />
               <div className="details">
                 <h2>Viewing {item.title}</h2>
@@ -66,3 +68,4 @@ class SingleItem extends Component {
 }
 
 export default SingleItem
+export { SINGLE_ITEM_QUERY }
