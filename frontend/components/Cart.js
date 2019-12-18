@@ -25,7 +25,7 @@ const Cart = () => (
         {({ data }) => (
           <CartStyles open={data.cartOpen}>
             <header>
-              <CloseButton title="close" onClick={toggleCart}>
+              <CloseButton onClick={toggleCart} title="close">
                 close
               </CloseButton>
               <Supreme>Your Cart</Supreme>
