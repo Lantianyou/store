@@ -6,6 +6,7 @@ import { TOGGLE_CART_MUTATION } from './Cart'
 import Signout from './Signout'
 import User from './User'
 import NavStyles from './styles/NavStyles'
+import CartItemCount from './CartItemCount'
 
 Router.onRouteChangeStart = () => {
   NProgress.start()
@@ -37,7 +38,17 @@ const Nav = () => (
             </Link>
             <Signout />
             <Mutation mutation={TOGGLE_CART_MUTATION}>
-              {(toggleCart) => <button onClick={toggleCart}>cart</button>}
+              {(toggleCart) => (
+                <button onClick={toggleCart}>
+                  cart
+                  <CartItemCount
+                    count={me.cart.reduce(
+                      (tally, cartItem) => tally + cartItem.quantity,
+                      0
+                    )}
+                  />
+                </button>
+              )}
             </Mutation>
           </>
         )}
