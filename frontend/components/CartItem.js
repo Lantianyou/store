@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import formatMoney from '../lib/formatMoney'
+import RemoveFromCart from './RemoveFromCart'
 
 const CartItemStyles = styled.li`
   padding: 1rem 0;
@@ -10,9 +11,11 @@ const CartItemStyles = styled.li`
   align-items: center;
   grid-template-columns: auto 1fr auto;
   img {
+    width: 100px;
     margin-right: 10px;
   }
-  h3, p {
+  h3,
+  p {
     margin: 0;
   }
 `
@@ -30,6 +33,7 @@ const CartItem = ({ cartItem }) => (
         </em>
       </p>
     </div>
+    <RemoveFromCart id={cartItem.id} />
   </CartItemStyles>
 )
 
