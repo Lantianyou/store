@@ -191,6 +191,9 @@ const Mutations = {
       },
       info
     )
+  },
+  async removeFromCart(parent, args, ctx, info) {
+    
   }
 }
 
