@@ -45,8 +45,6 @@ class Order extends Component {
             return <h2>loading</h2>
           }
           const { order } = data
-          console.log(order)
-          debugger
           return (
             <OrderStyles>
               <Head>
