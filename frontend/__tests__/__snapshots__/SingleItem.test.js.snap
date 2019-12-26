@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SingleItem /> renders with proper data 1`] = `
+<h2>
+  Viewing 
+  dogs are best
+</h2>
+`;
+
+exports[`<SingleItem /> renders with proper data 2`] = `
+<h2>
+  Viewing 
+  dogs are best
+</h2>
+`;
+
+exports[`<SingleItem /> renders with proper data 3`] = `
+<h2>
+  Viewing 
+  dogs are best
+</h2>
+`;
