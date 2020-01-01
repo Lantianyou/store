@@ -12,21 +12,25 @@ const fakeItem = {
 }
 
 describe('<Item />', () => {
-  it('pricetag and title', () => {
-    const wrapper = shallow(<ItemComponent item={fakeItem} />)
-    const PriceTag = wrapper.find('PriceTag')
-    expect(PriceTag.children().text()).toBe(formatMoney(fakeItem.price))
-    expect(wrapper.find('Title a').text()).toBe(fakeItem.title)
+  it('d', () => {
+    const price = '$50.43'
+    expect(price).toMatchSnapshot()
   })
-  it('img', () => {
-    const wrapper = shallow(<ItemComponent item={fakeItem} />)
-    const img = wrapper.find('img')
-    expect(img.props().alt).toBe(fakeItem.title)
-  })
-  it('button', () => {
-    const wrapper = shallow(<ItemComponent item={fakeItem} />)
-    const buttonList = wrapper.find('.buttonList')
-    expect(buttonList.children()).toHaveLength(3)
-    expect(buttonList.find('Link').exists()).toBe(true)
-  })
+  // it('pricetag and title', () => {
+  //   const wrapper = shallow(<ItemComponent item={fakeItem} />)
+  //   const PriceTag = wrapper.find('PriceTag')
+  //   expect(PriceTag.children().text()).toBe(formatMoney(fakeItem.price))
+  //   expect(wrapper.find('Title a').text()).toBe(fakeItem.title)
+  // })
+  // it('img', () => {
+  //   const wrapper = shallow(<ItemComponent item={fakeItem} />)
+  //   const img = wrapper.find('img')
+  //   expect(img.props().alt).toBe(fakeItem.title)
+  // })
+  // it('button', () => {
+  //   const wrapper = shallow(<ItemComponent item={fakeItem} />)
+  //   const buttonList = wrapper.find('.buttonList')
+  //   expect(buttonList.children()).toHaveLength(3)
+  //   expect(buttonList.find('Link').exists()).toBe(true)
+  // })
 })

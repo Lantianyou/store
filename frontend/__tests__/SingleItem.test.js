@@ -9,7 +9,7 @@ describe('<SingleItem />', () => {
   it('renders with proper data', async () => {
     const mocks = [
       {
-        request: { query: SINGLE_ITEM_QUERY, variables: { id: '123' } },
+        request: { query: SINGLE_ITEM_QUERY, variables: { id: 'abc123' } },
         result: {
           data: {
             item: fakeItem()
@@ -19,22 +19,22 @@ describe('<SingleItem />', () => {
     ]
     const wrapper = mount(
       <MockedProvider mocks={mocks}>
-        <SingleItem id="123" />
+        <SingleItem id="abc123" />
       </MockedProvider>
     )
     expect(wrapper.text()).toBe('loading...')
     await wait()
     wrapper.update()
-    console.log(wrapper.debug())
+
     expect(toJSON(wrapper.find('h2'))).toMatchSnapshot()
-    expect(toJSON(wrapper.find('img'))).toMatchSnapshot()
     expect(toJSON(wrapper.find('p'))).toMatchSnapshot()
+    expect(toJSON(wrapper.find('img'))).toMatchSnapshot()
   })
 
   it('errors', async () => {
     const mocks = [
       {
-        request: { query: SINGLE_ITEM_QUERY, variables: { id: '123' } },
+        request: { query: SINGLE_ITEM_QUERY, variables: { id: 'abc123' } },
         result: {
           errors: [{ message: 'Image not found' }]
         }
@@ -42,13 +42,13 @@ describe('<SingleItem />', () => {
     ]
     const wrapper = mount(
       <MockedProvider mocks={mocks}>
-        <SingleItem id="123" />
+        <SingleItem id="abc123" />
       </MockedProvider>
     )
     await wait()
     wrapper.update()
-    console.log(wrapper.debug())
     const item = wrapper.find('[data-test="graphql-error"]')
     expect(item.text()).toContain('Image not found')
+    expect(toJSON(item)).toMatchSnapshot()
   })
 })

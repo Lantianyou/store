@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Nav /> signed in with cart 1`] = `
+<div
+  className="count CartItemCount__Dot-p5gxa3-1 cCdbSw"
+>
+  6
+</div>
+`;

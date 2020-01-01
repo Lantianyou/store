@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<SingleItem /> errors 1`] = `
+<p
+  data-test="graphql-error"
+>
+  <strong>
+    Shoot!
+  </strong>
+  Image not found
+</p>
+`;
+
 exports[`<SingleItem /> renders with proper data 1`] = `
 <h2>
   Viewing 
@@ -8,15 +19,14 @@ exports[`<SingleItem /> renders with proper data 1`] = `
 `;
 
 exports[`<SingleItem /> renders with proper data 2`] = `
-<h2>
-  Viewing 
-  dogs are best
-</h2>
+<p>
+  dogs
+</p>
 `;
 
 exports[`<SingleItem /> renders with proper data 3`] = `
-<h2>
-  Viewing 
-  dogs are best
-</h2>
+<img
+  alt="dogs are best"
+  src="dog.jpg"
+/>
 `;
