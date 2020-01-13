@@ -82,3 +82,4 @@ class TakeMyMoney extends Component {
 }
 
 export default TakeMyMoney
+export { CREATE_ORDER_MUTATION }
